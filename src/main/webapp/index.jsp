@@ -5,9 +5,14 @@
 <body>
 	<h1>Hello Advait!!!!!</h1>
 	<p>
-		It is now
-		<%= new java.util.Date() %></p>
-	<p>
+    It is now
+    <% 
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        sdf.setTimeZone(TimeZone.getTimeZone("Asia/Kolkata"));
+        String indianTime = sdf.format(new Date());
+    %>
+    <%= indianTime %>
+</p>
 		You are coming from 
 		<%= request.getRemoteAddr()  %></p>
 </body>
